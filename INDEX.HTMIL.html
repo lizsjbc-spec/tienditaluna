@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> La Tiendita de Luna | Cuidado Capilar </title>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA_9IBgkLElcCnHsAefmNnNOipB_zVS3uK0ou4BxMh0CTz5PTrNxPFqGus9ShR1SZ5AbiPz_0208hdIIgQ&components=buttons&disable-funding=venmo&currency=MXN"></script>
+    
+    <!-- Tipografías Elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Iconos (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Framework de Diseño Responsivo (Tailwind CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de Paleta de Colores Personalizada -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        crema: '#FAF6F3',
+                        rosaSuave: '#F3E5E2',
+                        rosaPalo: '#D4A39D',
+                        rosaOscuro: '#B57F79',
+                        dorado: '#C5A059',
+                        carbon: '#3D3532',
+                        grisCalido: '#7A6F6B'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados adicionales */
+        body { background-color: #FAF6F3; color: #3D3532; }
+        .glass-nav { background: rgba(250, 246, 243, 0.92); backdrop-filter: blur(10px); }
+        .card-hover { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(181, 127, 121, 0.15); }
+        /* Ocultar barra de scroll en carrusel */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-rosaPalo selection:text-white">
+
+    <!-- ================= BARRA SUPERIOR DE PROMOCIÓN Y CONTACTO ================= -->
+    <div class="bg-carbon text-crema text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p class="tracking-wider text-center"> ENVÍO GRATIS EN COMPRAS MAYORES A $999 MXN | 15% OFF EN TU PRIMERA COMPRA </p>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+525565343689" class="hover:text-dorado transition"><i class="fas fa-phone-alt mr-1"></i> +52 (55) 2647-1077</a>
+                <span class="text-rosaPalo">|</span>
+                <!-- REDES SOCIALES -->
+                <div class="flex space-x-3">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-rosaPalo transition"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank" aria-label="TikTok" class="hover:text-rosaPalo transition"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-rosaPalo transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/525512345678" target="_blank" aria-label="WhatsApp" class="hover:text-rosaPalo transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ENCABEZADO PRINCIPAL (HEADER) ================= -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-rosaSuave">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- BOTÓN IZQUIERDO "MÁS" (MENÚ DE TIPOS DE CABELLO) -->
+                <div class="flex items-center">
+                    <button onclick="toggleSidebar()" class="flex items-center space-x-2 text-carbon hover:text-rosaOscuro transition font-medium tracking-widest uppercase text-xs border border-rosaPalo px-4 py-2 rounded-full">
+                        <i class="fas fa-bars"></i>
+                        <span>Más / Tipos de Cabello</span>
+                    </button>
+                </div>
+
+              <!-- LOGO DE LA TIENDA -->
+<div class="flex-shrink-0 flex items-center justify-center py-0.5 overflow-hidden">
+  <a href="#" class="flex flex-col items-center group">
+    <img src="img/carrusel-logo.jpg" alt="La Tiendita de Luna" class="h-12 w-auto object-contain mb-0.5">
+    <div class="flex items-center space-x-1.5 leading-none">
+      <i class="fas fa-moon text-dorado text-sm group-hover:rotate-12 transition-transform"></i>
+      <span class="font-serif text-lg sm:text-xl font-bold tracking-wide text-carbon">La Tiendita de Luna</span>
+    </div>
+  </a>
+</div>
+				
+                <!-- NAVEGACIÓN DERECHA Y CARRITO -->
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden md:flex space-x-6 text-xs uppercase tracking-widest font-medium">
+                        <a href="#destacados" class="hover:text-rosaOscuro transition">Destacados</a>
+                        <a href="#promociones" class="hover:text-rosaOscuro transition">Promociones</a>
+                        <a href="#catalogo" class="hover:text-rosaOscuro transition">Catálogo</a>
+                        <button onclick="openModal('quienes-somos')" class="hover:text-rosaOscuro transition uppercase">Nosotros</button>
+                    </nav>
+
+                    <!-- BOTÓN DEL CARRITO DE COMPRAS -->
+                    <button onclick="toggleCart()" class="relative p-2 text-carbon hover:text-rosaOscuro transition">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-rosaOscuro text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MENÚ DESLIZABLE IZQUIERDO ("MÁS") ================= -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/40 z-50 hidden transition-opacity"></div>
+    <aside id="left-sidebar" class="fixed top-0 left-0 w-80 h-full bg-crema z-50 transform -translate-x-full transition-transform duration-300 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+        <div>
+            <div class="flex justify-between items-center border-b border-rosaSuave pb-4 mb-6">
+                <h2 class="font-serif text-2xl font-bold text-carbon">Explorar por Cabello</h2>
+                <button onclick="toggleSidebar()" class="text-grisCalido hover:text-carbon text-xl"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <p class="text-xs text-grisCalido mb-4">Selecciona tu tipo de cabello para filtrar los productos ideales para ti:</p>
+            
+            <!-- FILTROS POR TIPO DE CABELLO -->
+            <ul class="space-y-3 text-sm font-medium">
+                <li>
+                    <button onclick="filterByHair('todos')" class="w-full text-left py-2.5 px-4 rounded-lg bg-rosaSuave/60 hover:bg-rosaPalo hover:text-white transition flex justify-between items-center">
+                        <span> Todos los productos</span>
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="filterByHair('rizado')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Cabello Rizado y Afro</span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="filterByHair('liso')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Cabello Liso </span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="filterByHair('ondulado')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Cabello Ondulado</span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="filterByHair('danado')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Cabello Dañado</span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="filterByHair('graso')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Cuero Cabelludo Graso</span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+				<li>
+              <button onclick="filterByHair('Gel fijador')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Gel fijador </span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button> </li>
+                <li>
+                  <button onclick="filterByHair('proteccion termica')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Termo protectores </span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+              <li>
+                    <button onclick="filterByHair('Aceites hidratantes')" class="w-full text-left py-2.5 px-4 rounded-lg hover:bg-rosaSuave transition flex justify-between items-center">
+                        <span> Aceites Hidratantes </span>
+                        <i class="fas fa-chevron-right text-xs text-rosaOscuro"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="mt-8 pt-6 border-t border-rosaSuave">
+                <h3 class="text-xs uppercase tracking-widest text-grisCalido font-semibold mb-3">Información Legal</h3>
+                <ul class="space-y-2 text-xs text-carbon">
+                    <li><button onclick="openModal('quienes-somos'); toggleSidebar();" class="hover:text-rosaOscuro">Quiénes Somos</button></li>
+                    <li><button onclick="openModal('privacidad'); toggleSidebar();" class="hover:text-rosaOscuro">Aviso de Privacidad</button></li>
+                    <li><button onclick="openModal('politicas'); toggleSidebar();" class="hover:text-rosaOscuro">Políticas de Envío y Devolución</button></li>
+                    <li><button onclick="openModal('terminos'); toggleSidebar();" class="hover:text-rosaOscuro">Términos y Condiciones</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-rosaSuave text-center">
+            <p class="text-xs text-grisCalido mb-2">¿Necesitas asesoría personalizada?</p>
+            <a href="https://wa.me/525512345678" target="_blank" class="inline-block w-full py-2 bg-carbon text-crema text-xs uppercase tracking-wider rounded-full hover:bg-rosaOscuro transition">
+                <i class="fab fa-whatsapp mr-1"></i> Escríbenos
+            </a>
+        </div>
+    </aside>
+
+    <!-- ================= CARRUSEL PRINCIPAL (HERO GALLERY) ================= -->
+    <section class="relative overflow-hidden bg-rosaSuave/40">
+        <div id="hero-carousel" class="relative w-full h-[500px] md:h-[600px]">
+            
+            <!-- SLIDE 1 ) -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center" style="background: linear-gradient(to right, rgba(250,246,243,0.92) 35%, rgba(250,246,243,0.2)), url('img/carrusel-principal.jpg') center/cover;">
+                <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                    <div class="max-w-xl">
+                        <span class="text-xs uppercase tracking-[0.25em] text-rosaOscuro font-semibold">Tienda de cuidado capilar. </span>
+                        <h1 class="font-serif text-4xl md:text-6xl font-bold text-carbon mt-3 mb-4 leading-tight">Tus Marcas Favoritas en un Solo Lugar. </h1>
+                        <p class="text-sm md:text-base text-grisCalido mb-8 leading-relaxed">Encuentra shampoos, acondicionadores, cremas para peinar y tratamientos de las líneas más buscadas para cada tipo de cabello.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#catalogo" class="px-8 py-3.5 bg-carbon text-crema text-xs uppercase tracking-widest rounded-full hover:bg-rosaOscuro transition shadow-md">Ver Catalogo </a>
+                            <a href="#promociones" class="px-8 py-3.5 border border-carbon text-carbon text-xs uppercase tracking-widest rounded-full hover:bg-carbon hover:text-crema transition">Promociones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none flex items-center" style="background: linear-gradient(to right, rgba(250,246,243,0.92) 35%, rgba(250,246,243,0.2)), url('img/carrusel-uno.jpg') center/cover;">
+                <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                    <div class="max-w-xl">
+                        <span class="text-xs uppercase tracking-[0.25em] text-dorado font-semibold">Liso, Rizado u Ondulado. </span>
+                        <h2 class="font-serif text-4xl md:text-6xl font-bold text-carbon mt-3 mb-4 leading-tight">El Producto Ideal para Tu Tipo de Cabello</h2>
+                        <p class="text-sm md:text-base text-grisCalido mb-8 leading-relaxed">Desde definición de rizos y control de frizz hasta brillo espejo y suavidad diaria, con fórmulas que ya conoces y funcionan.</p>
+                        <a href="#destacados" class="px-8 py-3.5 bg-rosaOscuro text-white text-xs uppercase tracking-widest rounded-full hover:bg-carbon transition shadow-md">Explorar lineas</a>
+                    </div>
+                </div>
+            </div>
+<!-- SLIDE 3 -->
+            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none flex items-center" style="background: linear-gradient(to right, rgba(250,246,243,0.92) 35%, rgba(250,246,243,0.2)), url('img/carrusel-dos.jpg') center/cover;">
+                <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                    <div class="max-w-xl">
+                        <span class="text-xs uppercase tracking-[0.25em] text-rosaOscuro font-semibold">Promociones y Básicos Diarios.</span>
+                        <h2 class="font-serif text-4xl md:text-6xl font-bold text-carbon mt-3 mb-4 leading-tight">Armar Tu Rutina Nunca Fue Tan Fácil.</h2>
+                        <p class="text-sm md:text-base text-grisCalido mb-8 leading-relaxed">Aprovecha kits completos, precios especiales y básicos de uso diario listos para pedir sin dar vueltas por todos lados.</p>
+                        <a href="#catalogo" class="px-8 py-3.5 bg-carbon text-crema text-xs uppercase tracking-widest rounded-full hover:bg-rosaOscuro transition shadow-md">Ver promociones</a>
+                    </div>
+                </div>
+            </div>
+            <!-- CONTROLES DEL CARRUSEL -->
+            <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-carbon flex items-center justify-center shadow transition">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-carbon flex items-center justify-center shadow transition">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+   <!-- =============== BARRA DE CATEGORÍAS RÁPIDAS =============== -->
+<section class="py-10 border-b border-rosaSuave bg-crema/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+      <button type="button" onclick="filtrarCategoriaRapida('todos', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-carbon text-crema shadow-sm hover:bg-rosaOscuro hover:text-white transition cursor-pointer">
+        Todo
+      </button>
+      <button type="button" onclick="filtrarCategoriaRapida('shampoos', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-rosaPalo text-white shadow-sm hover:bg-carbon transition cursor-pointer">
+        Shampoos
+      </button>
+      <button type="button" onclick="filtrarCategoriaRapida('acondicionadores', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-rosaPalo text-white shadow-sm hover:bg-carbon transition cursor-pointer">
+        Acondicionadores
+      </button>
+      <button type="button" onclick="filtrarCategoriaRapida('mascarillas', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-rosaPalo text-white shadow-sm hover:bg-carbon transition cursor-pointer">
+        Mascarillas
+      </button>
+      <button type="button" onclick="filtrarCategoriaRapida('aceites hidratantes', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-rosaPalo text-white shadow-sm hover:bg-carbon transition cursor-pointer">
+        Aceites Hidratantes
+      </button>
+      <button type="button" onclick="filtrarCategoriaRapida('leave-in', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-rosaPalo text-white shadow-sm hover:bg-carbon transition cursor-pointer">
+        Leave-In
+      </button>
+      <button type="button" onclick="filtrarCategoriaRapida('termo protectores', this)" class="cat-rapida px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold bg-rosaPalo text-white shadow-sm hover:bg-carbon transition cursor-pointer">
+        Protectores Térmicos
+      </button>
+    </div>
+  </div>
+</section>
+
+    <!-- ================= SECCIÓN DE PRODUCTOS DESTACADOS ================= -->
+    <section id="destacados" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-xs uppercase tracking-[0.25em] text-rosaOscuro font-semibold">Los Favoritos de Luna</span>
+            <h2 class="font-serif text-3xl md:text-5xl font-bold text-carbon mt-2">Productos Destacados</h2>
+            <div class="w-16 h-0.5 bg-dorado mx-auto mt-4"></div>
+        </div>
+
+        <!-- Contenedor dinámico de destacados -->
+        <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Se llena automáticamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN DE VIDEO DE LA MARCA ================= -->
+    <section class="py-16 bg-rosaSuave/40 border-y border-rosaSuave">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.25em] text-dorado font-semibold">Nuestra Esencia — Variedad que se adapta a ti.</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-carbon mt-2 mb-4">Resultados visibles.</h2>
+                    <p class="text-sm text-grisCalido leading-relaxed mb-6">
+                        En <strong>En La Tiendita de Luna creemos que cuidar tu cabello es un acto de amor propio. Reunimos productos de marcas reconocidas pensados para cubrir las necesidades reales de tu melena, ya sea lacia, ondulada, rizada o con frizz.
+                    </p>
+                    <ul class="space-y-3 text-sm text-carbon mb-8">
+                        <li><i class="fas fa-check text-dorado mr-2"></i> Marcas comerciales confiables y fáciles de elegir</li>
+                        <li><i class="fas fa-check text-dorado mr-2"></i> Opciones para cabello liso, ondulado, rizado y dañado </li>
+                        <li><i class="fas fa-check text-dorado mr-2"></i> Fórmulas ideales para rutinas diarias y definición </li>
+                    </ul>
+                    <button onclick="openModal('quienes-somos')" class="px-7 py-3 border border-carbon text-carbon text-xs uppercase tracking-widest rounded-full hover:bg-carbon hover:text-crema transition">Conoce nuestra historia</button>
+                </div>
+
+                <!-- CONTENEDOR DE VIDEO -->
+                <div class="relative rounded-2xl overflow-hidden shadow-xl bg-carbon aspect-[9/16] max-w-sm mx-auto">
+                    
+					<video class="w-full h-full object-cover" controls poster="img/portada-vertical.jpg">
+    <source src="VIDEO/video-luna.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+</video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN DE DESCUENTOS Y PROMOCIONES ================= -->
+    <section id="promociones" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-rosaSuave via-crema to-rosaSuave rounded-3xl p-8 md:p-12 border border-rosaPalo/30 shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+                <div>
+                    <span class="bg-rosaOscuro text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full">Ofertas Especiales</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-carbon mt-2">Descuentos y Kits Promocionales</h2>
+                </div>
+                <p class="text-xs text-grisCalido max-w-sm">Aprovecha precios especiales por tiempo limitado en nuestros tratamientos estrella.</p>
+            </div>
+
+            <div id="promo-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Se llena automáticamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CATÁLOGO COMPLETO DE PRODUCTOS ================= -->
+    <section id="catalogo" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-rosaSuave pb-4">
+            <div>
+                <span class="text-xs uppercase tracking-[0.25em] text-rosaOscuro font-semibold">Tienda en Línea</span>
+                <h2 id="catalog-title" class="font-serif text-3xl md:text-5xl font-bold text-carbon mt-1">Catálogo Completo</h2>
+            </div>
+            <p id="filter-status" class="text-xs text-grisCalido mt-2 md:mt-0">Mostrando todos los productos</p>
+        </div>
+
+        <!-- Cuadrícula de Productos -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Se llena automáticamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- ================= PIE DE PÁGINA (FOOTER) ================= -->
+    <footer class="bg-carbon text-crema pt-16 pb-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Columna 1: Marca -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-moon text-dorado text-xl"></i>
+                        <span class="font-serif text-2xl font-bold">La Tiendita de Luna</span>
+                    </div>
+                    <p class="text-xs text-crema/70 leading-relaxed mb-6">
+                        Reunimos tus marcas comerciales favoritas para el cuidado del cabello en un solo lugar, pensadas para acompañar tu rutina diaria con practicidad y buenos resultados.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rosaPalo transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rosaPalo transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rosaPalo transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/525512345678" target="_blank" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-rosaPalo transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Categorías -->
+                <div>
+                    <h4 class="font-serif text-lg font-semibold text-dorado mb-4">Productos</h4>
+                    <ul class="space-y-2.5 text-xs text-crema/80">
+                        <li><a href="#catalogo" onclick="filterByCategory('shampoos')" class="hover:text-rosaPalo transition">Shampoos</a></li>
+                        <li><a href="#catalogo" onclick="filterByCategory('acondicionadores')" class="hover:text-rosaPalo transition">Acondicionadores</a></li>
+                        <li><a href="#catalogo" onclick="filterByCategory('mascarillas')" class="hover:text-rosaPalo transition">Mascarillas</a></li>
+                        <li><a href="#catalogo" onclick="filterByCategory('Aceites hidratantes')" class="hover:text-rosaPalo transition">Aceites hidratantes</a></li>
+                        <li><a href="#catalogo" onclick="filterByCategory('leave-in')" class="hover:text-rosaPalo transition">Leave-In</a></li>
+						<li><a href="#catalogo" onclick="filterByCategory('termo protectores')" class="hover:text-rosaPalo transition">Termo protectores</a></li>
+						<li><a href="#catalogo" onclick="filterByCategory('Gel fijador')" class="hover:text-rosaPalo transition">Gel fijador</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Columna 3: Legal y Empresa -->
+                <div>
+                    <h4 class="font-serif text-lg font-semibold text-dorado mb-4">Información</h4>
+                    <ul class="space-y-2.5 text-xs text-crema/80">
+                        <li><button onclick="openModal('quienes-somos')" class="hover:text-rosaPalo transition">Quiénes Somos</button></li>
+                        <li><button onclick="openModal('privacidad')" class="hover:text-rosaPalo transition">Aviso de Privacidad</button></li>
+                        <li><button onclick="openModal('politicas')" class="hover:text-rosaPalo transition">Políticas de Envío y Devolución</button></li>
+                        <li><button onclick="openModal('terminos')" class="hover:text-rosaPalo transition">Términos y Condiciones</button></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto y Pagos -->
+                <div>
+                    <h4 class="font-serif text-lg font-semibold text-dorado mb-4">Atención al Cliente</h4>
+                    <ul class="space-y-3 text-xs text-crema/80 mb-6">
+                        <li><i class="fas fa-phone-alt text-rosaPalo mr-2"></i> +52 (55)  2647-1077 </li>
+                        <li><i class="fab fa-whatsapp text-rosaPalo mr-2"></i> WhatsApp: +52 (55) 65343689</li>
+                        <li><i class="fas fa-envelope text-rosaPalo mr-2"></i> latienditadeluna@outlook.com</li>
+                    </ul>
+                    <p class="text-[11px] uppercase tracking-wider text-crema/60 mb-2">Método de Pago Seguro:</p>
+                    <div class="inline-flex items-center bg-white text-carbon px-4 py-1.5 rounded font-bold text-sm">
+                        <i class="fab fa-paypal text-[#003087] text-lg mr-2"></i> PayPal
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-crema/50">
+                <p>&copy; 2026 La Tiendita de Luna. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= CARRITO DE COMPRAS LATERAL (DRAWER) ================= -->
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 z-50 hidden transition-opacity"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 w-full max-w-md h-full bg-crema z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col justify-between">
+        
+        <!-- Cabecera del Carrito -->
+        <div class="p-6 border-b border-rosaSuave flex justify-between items-center bg-white">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shopping-bag text-rosaOscuro"></i>
+                <h3 class="font-serif text-2xl font-bold text-carbon">Tu Carrito</h3>
+            </div>
+            <button onclick="toggleCart()" class="text-grisCalido hover:text-carbon text-xl"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Lista de Productos en el Carrito -->
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Los productos agregados aparecerán aquí -->
+            <p class="text-center text-grisCalido text-sm py-12">Tu carrito está vacío. ¡Descubre nuestros productos capilares!</p>
+        </div>
+<!-- Total y Botón de Pago PayPal -->
+        <div class="p-6 border-t border-rosaSuave bg-white">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-sm text-grisCalido">Subtotal</span>
+                <span id="cart-total" class="font-serif text-2xl font-bold text-carbon">$0.00 MXN</span>
+            </div>
+            <p class="text-[11px] text-grisCalido mb-4 text-center">Serás redirigido de forma segura a PayPal para completar tu compra.</p>
+            
+            <!-- CONTENEDOR BOTÓN PAYPAL -->
+            <div id="paypal-button-container" class="w-full space-y-2"></div>
+
+            <!-- BOTÓN DE PAGO PAYPAL (RESPALDO / DISPARADOR) -->
+            <button type="button" onclick="checkoutPayPal()" class="mt-2 w-full py-3.5 bg-[#FFC439] hover:bg-[#F4BB30] text-[#003087] font-bold rounded-full shadow-md transition flex items-center justify-center space-x-2">
+                <i class="fab fa-paypal text-xl"></i>
+                <span>Pagar con PayPal</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= VENTANA MODAL PARA TEXTOS LEGALES Y QUIÉNES SOMOS ================= -->
+    <div id="info-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-crema max-w-2xl w-full rounded-2xl p-6 md:p-8 shadow-2xl max-h-[85vh] overflow-y-auto relative">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-grisCalido hover:text-carbon text-xl"><i class="fas fa-times"></i></button>
+            <h3 id="modal-title" class="font-serif text-3xl font-bold text-carbon mb-4 border-b border-rosaSuave pb-3">Título</h3>
+            <div id="modal-content" class="text-sm text-grisCalido space-y-4 leading-relaxed">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= BOTÓN FLOTANTE DE WHATSAPP ================= -->
+    <a href="https://wa.me/525512345678" target="_blank" aria-label="Chat en WhatsApp" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center text-2xl hover:scale-110 transition-transform z-30">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= LÓGICA DE LA TIENDA ================= -->
+    <script>
+        /* ==========================================================================
+           BASE DE DATOS DE PRODUCTOS 
+           ========================================================================== */
+        const productos = [
+            {
+                id: 1,
+                nombre: "Shampoo Elvive dream liso",
+                categoria: "shampoos",
+                tipoCabello: ["danado", "liso"],
+                precio: 160,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/lorealshampoo-liso.jpg",
+                descripcion: "Limpieza que aporta un brillo tipo espejo, suavidad y sedosidad."
+            },
+            {
+                id: 2,
+                nombre: "Shampoo Cantú",
+                categoria: "shampoos",
+                tipoCabello: ["rizado"],
+                precio: 130,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/shampoo-rizos.jpg",
+                descripcion: "Limpieza suave sin sulfatos equilibra el cuero cabelludo sensible y estimula el crecimiento saludable."
+            },
+            {
+                id: 3,
+                nombre: "Acondicionador Cantú",
+                categoria: "acondicionadores",
+                tipoCabello: ["danado"],
+                precio: 125,
+                precioAnterior: 145,
+                destacado: true,
+                promocion: true,
+                imagen: "img/acondicionador-rizos.jpg",
+                descripcion: "Desenreda al instante y controla el frizz sin aportar peso al cabello."
+            },
+            {
+                id: 4,
+                nombre: "Activador de rizos",
+                categoria: "leave-in",
+                tipoCabello: ["rizado", "ondulado"],
+                precio: 160,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/activador-rizos.jpg",
+                descripcion: "Ideal para cabello con frizz."
+            },
+            {
+                id: 5,
+                nombre: "Crema Rizos Definidos",
+                categoria: "leave-in",
+                tipoCabello: ["rizado", "ondulado"],
+                precio: 195,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/cremanormal-rizos.jpg",
+                descripcion: "Crema sin enjuague con extracto de karite y coco para ondas elásticas."
+            },
+            {
+                id: 6,
+                nombre: "Tratamiento elvive dream liso",
+                categoria: "mascarillas",
+                tipoCabello: ["danado", "liso"],
+                precio: 135,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/tratamiento-liso.jpg",
+                descripcion: "Ideal para tener un cabello saludable, suave y manejable."
+            },
+            {
+                id: 7,
+                nombre: "Kit Completo Hidratación (5 Piezas)",
+                categoria: "shampoos",
+                tipoCabello: ["rizado", "ondulado", "danado"],
+                precio: 440,
+                precioAnterior: 620,
+                destacado: false,
+                promocion: true,
+                imagen: "img/kitof-cantu.jpg",
+                descripcion: "Incluye Shampoo, Acondicionador, Activador de rizos, Crema estilizadora y leave-in."
+            },
+            {
+                id: 8,
+                nombre: "Serum liso 7 dias",
+                categoria: "Aceites hidratantes",
+                tipoCabello: ["liso", "danado","Aceites hidratantes"],
+                precio: 210,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/aceite-liso.jpg",
+                descripcion: "Aceite con protector térmica de hasta 230°, controla el frizz, resistente a la humedad."
+			},
+			{
+                id: 9,
+                nombre: "Skala mais cachos",
+                categoria: "mascarillas",
+                tipoCabello: ["rizado", "danado"],
+                precio: 280,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/skala-rizos.jpg",
+                descripcion: "Ayuda a hidratar a profundidad, ideal para cabellos 3a,3b,3c."
+            },
+			{
+                id: 10,
+                nombre: "Skala mais crespos",
+                categoria: "mascarillas",
+                tipoCabello: ["rizado", "danado"],
+                precio: 300,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/skala-afro.jpg",
+                descripcion: "Crema hidratante 2 en 1, con extracto de argán."
+            },
+			{
+                id: 11,
+                nombre: "Skala divino potao",
+                categoria: "mascarillas",
+                tipoCabello: ["rizado", "danado"],
+                precio: 280,
+                precioAnterior: 340,
+                destacado: false,
+                promocion: true,
+                imagen: "img/skala-divino.jpg",
+                descripcion: "Ideal para cabellos crespos o en transición."
+            },
+			{
+                id: 12,
+                nombre: "Elvive Dream Liso",
+                categoria: "mascarillas",
+                tipoCabello: ["liso"],
+                precio: 120,
+                precioAnterior: 135,
+                destacado: false,
+                promocion: true,
+                imagen: "img/elvive-crema.jpg",
+                descripcion: "Facilita el alaciado del cabello, sin enjuague."
+            },
+			{
+                id: 13,
+                nombre: "Sedal liso",
+                categoria: "shampoos",
+                tipoCabello: ["liso"],
+                precio: 80,
+                precioAnterior: 90,
+                destacado: false,
+                promocion: true,
+                imagen: "img/sedal-liso.jpg",
+                descripcion: "Limpia a profundidad, dejando una sensación de frescura."
+            },
+			{
+                id: 14,
+                nombre: "Garnier fructis liso y brillo",
+                categoria: "shampoos",
+                tipoCabello: ["liso"],
+                precio: 80,
+                precioAnterior: 110,
+                destacado: false,
+                promocion: true,
+                imagen: "img/shampoo-liso.jpg",
+                descripcion: "Shampoo alisador con keratina vegetal."
+            },
+			{
+                id: 15,
+                nombre: "Skala mais lisos",
+                categoria: "mascarillas",
+                tipoCabello: ["liso", "danado"],
+                precio: 380,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/skala-liso.jpg",
+                descripcion: "Tratamiento 2 en 1, que ofrece nutrición y control de frizz."
+            },
+			{
+                id: 16,
+                nombre: "Ondulados lola inc",
+                categoria: "leave-in",
+                tipoCabello: ["ondulado"],
+                precio: 135,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/crema-ondulado.jpg",
+                descripcion: "Crema de uso diario, ideal para cabello ondulado, aporta brillo, definición y reducción de frizz."
+            },
+			{
+                id: 17,
+                nombre: "Hair food manteca de cacao",
+                categoria: "leave-in",
+                tipoCabello: ["ondulado"],
+                precio: 85,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/garnier-cremaondas.jpg",
+                descripcion: "Crema para peinar 3 en 1 nutre, repara, anti frizz."
+            },
+			{
+                id: 18,
+                nombre: "Mascarilla manteca de cacao",
+                categoria: "mascarillas",
+                tipoCabello: ["ondulado"],
+                precio: 95,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/garnier-ondulado.jpg",
+                descripcion: "Mascarilla capilar 3 en 1, nutre, repara e hidrata."
+			},
+			{
+                id: 19,
+                nombre: "Garnier nutri rizos secado al aire",
+                categoria: "leave-in",
+                tipoCabello: ["ondulado","rizado"],
+                precio: 70,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/garnier-rizos.jpg",
+                descripcion: "Nutre y define sin secador."
+			},
+			{
+                id: 20,
+                nombre: "Shampoo manteca de cacao",
+                categoria: "shampoos",
+                tipoCabello: ["ondulado","rizado"],
+                precio: 120,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/garnier-shampoo.jpg",
+                descripcion: "Limpia sin resecar el cuero cabelludo."
+			},
+			{
+                id: 21,
+                nombre: "Kit Skala 2 piezas shampoo y acondicionador",
+                categoria: "shampoos",
+                tipoCabello: ["ondulado"],
+                precio: 360,
+                precioAnterior: 400,
+                destacado: false,
+                promocion: true,
+                imagen: "img/kit-skala.jpg",
+                descripcion: "Shampo y acondicionador con extracto de savila."
+			},
+			{
+                id: 22,
+                nombre: "Gel fijador Marc Anthony",
+                categoria: "aceites hidrantantes",
+                tipoCabello: ["ondulado"],
+                precio: 180,
+                precioAnterior: 200,
+                destacado: false,
+                promocion: true,
+                imagen: "img/marcgel-ondulado.jpg",
+                descripcion: "Gel fijador."
+			},
+			{
+                id: 23,
+                nombre: "Crema estilizadora Marc Anthony",
+                categoria: "leave-in",
+                tipoCabello: ["ondulado"],
+                precio: 180,
+                precioAnterior: 200,
+                destacado: false,
+                promocion: true,
+                imagen: "img/marcrema-ondulado.jpg",
+                descripcion: "Crema para peinar con extracto de vitamina e."
+			},
+			{
+                id: 24,
+                nombre: "Mousse Marc Anthony",
+                categoria: "leave-in",
+                tipoCabello: ["ondulado"],
+                precio: 200,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/espuma-ondulado.jpg",
+                descripcion: "Mousee anti humedad."
+			},
+			{
+                id: 25,
+                nombre: "Skala Ondulados",
+                categoria: "mascarillas",
+                tipoCabello: ["ondulado"],
+                precio: 360,
+                precioAnterior: 400,
+                destacado: false,
+                promocion: true,
+                imagen: "img/skala-ondulado.jpg",
+                descripcion: "Hidrata y da brillo."
+			},
+			{
+                id: 26,
+                nombre: "Protector termico garnier liso",
+                categoria: "termo protectores",
+                tipoCabello: ["proteccion termica"],
+                precio: 100,
+                precioAnterior: 105,
+                destacado: false,
+                promocion: true,
+                imagen: "img/protector-garnier.jpg",
+                descripcion: "Brinda una proteccion de hasta 230 grados, dejando un acabado liso y brillante."
+			},
+			{
+                id: 27,
+                nombre: "Protector termico got2b",
+                categoria: "termo protectores",
+                tipoCabello: ["proteccion termica"],
+                precio: 185,
+                precioAnterior: 200,
+                destacado: false,
+                promocion: true,
+                imagen: "img/protector-got.jpg",
+                descripcion: "Brinda una proteccion de hasta 220 grados."
+			},
+			{
+                id: 28,
+                nombre: "Protector termico keratin",
+                categoria: "termo protectores",
+                tipoCabello: ["proteccion termica"],
+                precio: 135,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/protector-kativa.jpg",
+                descripcion: "Libre de sulfatos y parabenos."
+			},
+			{
+                id: 29,
+                nombre: "Protector termico pantene",
+                categoria: "termo protectores",
+                tipoCabello: ["proteccion termica"],
+                precio: 199,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/protector-pantene.jpg",
+                descripcion: "Spray multibeneficios 10 en 1."
+			},
+			{
+                id: 30,
+                nombre: "Protector termico tresemme",
+                categoria: "termo protectores",
+                tipoCabello: ["proteccion termica"],
+                precio: 185,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/protector-treseme.jpg",
+                descripcion: "Ofrece un acabado profesiona1."
+			},
+			{
+                id: 31,
+                nombre: "Shampoo Isdin cuero cabelludo graso",
+                categoria: "shampoos",
+                tipoCabello: ["graso"],
+                precio: 495,
+                precioAnterior: 600,
+                destacado: false,
+                promocion: true,
+                imagen: "img/shampoo-graso.jpg",
+                descripcion: "Shampoo anti caspa para cuero cabelludo graso."
+			},
+			
+			{
+                id: 32,
+                nombre: "Aceite oleo extraordinario",
+                categoria: "Aceites hidratantes",
+                tipoCabello: ["liso", "danado","Aceites hidratantes"],
+                precio: 120,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/elvive-aceite.jpg",
+                descripcion: "Ayuda a hidratar y reducir el frizz."
+			},
+			{
+                id: 33,
+                nombre: "Óleo nutritivo",
+                categoria: "Aceites hidratantes",
+                tipoCabello: ["liso", "danado","Aceites hidratantes"],
+                precio: 160,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/pantene-aceite.jpg",
+                descripcion: "Nutrición y brillo."
+			},
+			{
+                id: 33,
+                nombre: "Argan oil",
+                categoria: "Aceites hidratantes",
+                tipoCabello: ["danado","Aceites hidratantes"],
+                precio: 210,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/argan-aceite.jpg",
+                descripcion: "Nutre a profundidad."
+			},
+			{
+                id: 34,
+                nombre: "Acondicionador lavanda y aceite de almendras",
+                categoria: "acondicionadores",
+                tipoCabello: ["ondulado"],
+                precio: 85,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/acondicionador-morado.jpg",
+                descripcion: "Acondicionador anti frizz."
+            },
+			{
+                id: 35,
+                nombre: "Acondicionador rosa mosqueta",
+                categoria: "acondicionadores",
+                tipoCabello: ["liso"],
+                precio: 78,
+                precioAnterior: 90,
+                destacado: true,
+                promocion: true,
+                imagen: "img/acondicionador-mosqueta.jpg",
+                descripcion: "Acondicionador que proporciona suavidad extrema."
+			},
+			{
+                id: 36,
+                nombre: "Pantene keratina acondicionador sin sal",
+                categoria: "acondicionadores",
+                tipoCabello: ["danado"],
+                precio: 120,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/acondicionador-pantene.jpg",
+                descripcion: "Acondicionador de keratina sin sal, repara y protege."
+			},
+			{
+                id: 37,
+                nombre: "Acondicionador garnier fructis sandia",
+                categoria: "acondicionadores",
+                tipoCabello: ["liso"],
+                precio: 120,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/acondicionador-sandia.jpg",
+                descripcion: "Acondicionador revitalizante 3 en 1."
+			},
+			{
+                id: 38,
+                nombre: "Acondicionador shea butter y aloe vera",
+                categoria: "acondicionadores",
+                tipoCabello: ["rizos","ondulado"],
+                precio: 190,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/maui-acondicionador.jpg",
+                descripcion: "Acondicionador libre de sulfatos y silicona."
+			},
+			{
+                id: 39,
+                nombre: "Shampoo dercos vichy",
+                categoria: "shampoos",
+                tipoCabello: ["graso"],
+                precio: 595,
+                precioAnterior: 750,
+                destacado: false,
+                promocion: true,
+                imagen: "img/dercos-shampoo.jpg",
+                descripcion: "Shampoo dermatologico."
+			},
+			{
+                id: 40,
+                nombre: "Shampoo oil control cerave",
+                categoria: "shampoos",
+                tipoCabello: ["graso"],
+                precio: 550,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/cerave-shampoo.jpg",
+                descripcion: "Shampoo dermatologico sin sulfatos."
+			},
+			{
+                id: 41,
+                nombre: "Shampoo head and shoulders oil control",
+                categoria: "shampoos",
+                tipoCabello: ["graso"],
+                precio: 150,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/head-shampoo.jpg",
+                descripcion: "Shampoo control oleosidad."
+			},
+			{
+                id: 42,
+                nombre: "Gel Extreme",
+                categoria: "Gel fijador",
+                tipoCabello: ["Gel fijador","ondulado","rizos"],
+                precio: 35,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/gel-extreme.jpg",
+                descripcion: "Gel 24 horas de fijación."
+			},
+			{
+                id: 43,
+                nombre: "Gel Garnier Stop Caida",
+                categoria: "Gel fijador",
+                tipoCabello: ["Gel fijador","ondulado","rizos"],
+                precio: 80,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/gel-garnier.jpg",
+                descripcion: "Gel stop caida con cafeina."
+			},
+			{
+                id: 44,
+                nombre: "Gel Arbol verde Linaza",
+                categoria: "Gel fijador",
+                tipoCabello: ["Gel fijador","ondulado","rizos"],
+                precio: 40,
+                precioAnterior: null,
+                destacado: true,
+                promocion: false,
+                imagen: "img/gel-linaza.jpg",
+                descripcion: "Gel de linaza, sin quimicos dañinos, sin alcohol, no deja residuos."
+			},
+			{
+                id: 45,
+                nombre: "Gel Extreme Lady",
+                categoria: "Gel fijador",
+                tipoCabello: ["Gel fijador","ondulado","rizos"],
+                precio: 38,
+                precioAnterior: null,
+                destacado: false,
+                promocion: false,
+                imagen: "img/gel-morado.jpg",
+                descripcion: "Gel lady, cuida e hidrata."
+			},
+			{
+                id: 45,
+                nombre: "Gel Got2b",
+                categoria: "Gel fijador",
+                tipoCabello: ["Gel fijador","ondulado","rizos"],
+                precio: 145,
+                precioAnterior: 150,
+                destacado: true,
+                promocion: true,
+                imagen: "img/gel-got.jpg",
+                descripcion: "Gel de maxima resistencia."
+			}
+        ];
+				
+
+        /* ==========================================================================
+           CONTENIDO DE LAS SECCIONES LEGALES Y QUIÉNES SOMOS
+           ========================================================================== */
+        const textosInfo = {
+            'quienes-somos': {
+            titulo: 'Quiénes Somos',
+            contenido: `
+                <p><strong>Somos una tienda en línea dedicada al cuidado capilar práctico y cotidiano.</strong> Reunimos tus marcas comerciales favoritas de supermercado en un catálogo organizado por tipo de cabello y necesidad, para que armar tu rutina de hidratación, reparación o definición sin complicaciones.</p>
+                <p class="mt-2">Trabajamos con productos 100% originales y seleccionados pensando en resultados reales, comodidad y confianza en cada pedido.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-crema/60 border border-rosaSuave rounded-xl p-4">
+                        <h4 class="font-serif font-bold text-carbon text-base mb-1"><i class="fas fa-bullseye text-rosaOscuro mr-1.5"></i>Misión</h4>
+                        <p class="text-xs text-grisCalido leading-relaxed">Acercar productos comerciales y de supermercado reconocidos para el cuidado capilar en un solo lugar, facilitando encontrar los tratamientos ideales según cada tipo de cabello.</p>
+                    </div>
+                    <div class="bg-crema/60 border border-rosaSuave rounded-xl p-4">
+                        <h4 class="font-serif font-bold text-carbon text-base mb-1"><i class="fas fa-eye text-rosaOscuro mr-1.5"></i>Visión</h4>
+                        <p class="text-xs text-grisCalido leading-relaxed">Consolidarnos como una tienda en línea de referencia en México para el cuidado del cabello cotidiano, destacando por nuestra variedad y confianza.</p>
+                    </div>
+                    <div class="bg-crema/60 border border-rosaSuave rounded-xl p-4">
+                        <h4 class="font-serif font-bold text-carbon text-base mb-1"><i class="fas fa-heart text-rosaOscuro mr-1.5"></i>Valores</h4>
+                        <ul class="text-xs text-grisCalido space-y-1">
+                            <li><strong>Cercanía:</strong> Guía clara para cada melena.</li>
+                            <li><strong>Practicidad:</strong> Compra rápida y organizada.</li>
+                            <li><strong>Confianza:</strong> Productos 100% originales.</li>
+                            <li><strong>Accesibilidad:</strong> Precios justos y efectivos.</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        },
+            'privacidad': {
+                titulo: 'Aviso de Privacidad',
+                contenido: `
+                    <p>En <strong> Última actualización: 19 de noviembre de 2026.
+1. Identidad y domicilio del responsableLa Tiendita de Luna, cuyo responsable es Lizeth Santiago Juarez, con domicilio en Lomas de atizapan, 37, México nurvo, Cdad lopez mateos, 52977., Estado de méxico, es responsable del tratamiento de los datos personales que recabe a través de su tienda virtual  www.latienditadeluna.com.Para cualquier consulta relacionada con el tratamiento de sus datos personales, puede comunicarse al correo electrónico latienditadeluna@outlook.com o al teléfono +52 (55) 2647-1077.   
+2. Datos personales que se recabanPara gestionar las compras y proporcionar atención a los clientes, La Tiendita de Luna podrá recabar los siguientes datos personales, según las funciones disponibles en la tienda:Nombre y apellidos.Correo electrónico.Número telefónico.Domicilio de entrega.Datos relacionados con los pedidos y las compras realizadas.Información necesaria para atender solicitudes, aclaraciones, cambios o devoluciones.Los datos bancarios o de tarjetas de pago serán tratados, en su caso, directamente mediante el proveedor o pasarela de pagos correspondiente.La Tiendita de Luna no solicita datos personales sensibles para las finalidades descritas.
+3. Finalidades del tratamiento de los datos personalesLos datos personales podrán utilizarse para las siguientes finalidades primarias, necesarias para atender la relación comercial:Registrar y gestionar los pedidos.Procesar las compras y coordinar los pagos mediante los medios habilitados.Preparar y entregar los productos adquiridos.Enviar confirmaciones y notificaciones sobre los pedidos.Atender dudas, aclaraciones, reclamaciones, cambios y devoluciones.Cumplir las obligaciones legales aplicables a las operaciones comerciales.Adicionalmente, La Tiendita de Luna podrá utilizar los datos de contacto para enviar promociones, ofertas, novedades y publicidad sobre sus productos.La persona titular podrá manifestar su negativa a recibir publicidad en cualquier momento enviando un mensaje al correo electrónico latienditadeluna@outlook.com o solicitándolo directamente al teléfono +52 (55) 2647-1077.   4. Opciones y medios para limitar el uso o divulgación de los datosLas personas titulares podrán solicitar que sus datos no se utilicen para finalidades publicitarias o promocionales mediante el correo electrónico latienditadeluna@outlook.com.La solicitud será atendida conforme a las disposiciones legales aplicables.
+5. Transferencias de datos personalesLos datos personales podrán comunicarse a terceros únicamente cuando resulte necesario para las operaciones de la tienda, como empresas de mensajería y paquetería para entregar los pedidos, o proveedores de servicios tecnológicos y de pago para procesar las transacciones.Estas comunicaciones se realizan conforme a la legislación aplicable y exclusivamente para las finalidades informadas en el presente aviso.
+6. Derechos ARCO y procedimiento para ejercerlosLa persona titular podrá ejercer sus derechos ARCO:Acceso: conocer qué datos personales tiene la tienda y cómo los utiliza.Rectificación: solicitar la corrección de datos inexactos o incompletos.Cancelación: solicitar la eliminación de sus datos cuando legalmente proceda.Oposición: oponerse al tratamiento de sus datos en los supuestos previstos por la legislación.Para ejercer estos derechos, podrá enviar una solicitud a latienditadeluna@outlook.com , indicando su nombre completo, el derecho que desea ejercer, una descripción clara de su solicitud y los elementos necesarios para identificar los datos correspondientes.La Tiendita de Luna comunicará los requisitos adicionales que resulten aplicables y atenderá la solicitud dentro de los plazos previstos por la legislación vigente.
+7. Medidas de seguridadLa Tiendita de Luna implementa medidas de seguridad administrativas, técnicas y físicas adecuadas para proteger los datos personales contra daño, pérdida, alteración, destrucción o acceso y tratamiento no autorizados, incluyendo controles de acceso, contraseñas robustas y conexiones seguras.
+8. Cambios al aviso de privacidadEste aviso podrá actualizarse debido a cambios en las operaciones de la tienda, las finalidades del tratamiento o las disposiciones legales aplicables.Las modificaciones se publicarán en www.latienditadeluna.com https://www.latienditadeluna.com, indicando la fecha de la última actualización. Se recomienda a las personas usuarias consultar periódicamente esta sección.Responsable del aviso: Lizeth Santiago Juarez. Correo electrónico: latienditadeluna@outlook.com Teléfono de contacto: +52 (55) 2647-1077.   Sitio web: https://www.latienditadeluna.com.</p>
+                `
+            },
+            'politicas': {
+                titulo: 'Políticas de Envío y Devolución',
+                contenido: `
+                    <p><strong>Envíos:</strong> Envíos Cobertura y costos: Enviamos a todo México. El envío es gratis en compras mayores a $999 MXN y tiene un costo estándar de $120 MXN en pedidos menores.   
+Tiempos de entrega: Preparamos tu pedido en 1 a 2 días hábiles tras confirmar el pago, y la paquetería entrega en un estimado de 3 a 5 días hábiles.
+Rastreo y recepción: Te enviaremos tu número de guía por correo o WhatsApp. Es importante verificar que tu dirección esté completa; tras 2 intentos fallidos de entrega, el reenvío tendrá un costo adicional.
+		Cambios y Devoluciones
+
+Condiciones: Por tratarse de productos de cuidado personal, solo se aceptan cambios o devoluciones dentro de los primeros 5 días naturales tras recibir tu pedido, siempre que el producto esté cerrado, sin usar y con su sello de seguridad intacto.
+
+Productos dañados o incorrectos: Si tu pedido llega derramado, dañado o equivocado, contáctanos dentro de las primeras 48 horas con fotos del paquete y del producto para enviarte un reemplazo sin costo o gestionar tu reembolso.
+		ContactoWhatsApp / Teléfono: +52 (55) 2647-1077   Correo electrónico: latienditadeluna@outlook.com </p>
+                `
+            },
+            'terminos': {
+                titulo: 'Términos y Condiciones',
+                contenido: `
+                    <p> Última actualización: 19 de noviembre de 2026. Al navegar y realizar compras en el sitio web de <strong>La Tiendita de Luna</strong>, aceptas los presentes términos y condiciones.</p>
+                    <p>
+
+
+1. Productos y disponibilidad
+
+Todos los productos ofrecidos en nuestro catálogo son 100% originales de marcas comerciales reconocidas para el cuidado capilar.
+
+Las imágenes son ilustrativas; los empaques o presentaciones pueden variar ligeramente según las actualizaciones de cada fabricante.
+
+Todos los pedidos están sujetos a disponibilidad de inventario. En caso de agotarse un artículo tras tu compra, te notificaremos para ofrecerte un cambio o el reembolso correspondiente.
+
+2. Precios, pagos y promociones
+
+Todos los precios están expresados en Pesos Mexicanos (MXN) e incluyen impuestos aplicables.
+
+Nos reservamos el derecho de actualizar precios y promociones sin previo aviso, respetando siempre el monto confirmado en pedidos ya pagados.
+
+Promociones: El descuento de 15% OFF en tu primera compra y el envío gratis en compras mayores a $999 MXN aplican conforme a las condiciones vigentes en la tienda y no son acumulables con otros cupones, salvo que se indique lo contrario.
+
+3. Envíos y devoluciones
+
+Los tiempos de entrega, costos de envío y condiciones para cambios o devoluciones se rigen por lo establecido en nuestras Políticas de Envío y Devolución.
+
+4. Uso del contenido e información
+
+Las recomendaciones por tipo de cabello en nuestro sitio tienen fines informativos y de orientación general; no sustituyen la valoración de un dermatólogo o especialista.
+
+El logotipo, diseño, textos y elementos gráficos propios de La Tiendita de Luna están protegidos y no pueden reproducirse sin autorización previa.
+
+5. Contacto
+Para dudas, aclaraciones o soporte sobre tu compra, contáctanos en:WhatsApp / Teléfono: +52 (55) 2647-1077   Correo electrónico:latienditadeluna@outlook.com </p>
+                `
+            }
+        };
+
+        /* ==========================================================================
+           FUNCIONES DEL CARRITO DE COMPRAS
+           ========================================================================== */
+        let carrito = [];
+
+        function addToCart(id) {
+            const producto = productos.find(p => p.id === id);
+            const itemExistente = carrito.find(item => item.id === id);
+
+            if (itemExistente) {
+                itemExistente.cantidad++;
+            } else {
+                carrito.push({ ...producto, cantidad: 1 });
+            }
+            updateCartUI();
+            toggleCart(true); // Abre el carrito automáticamente al añadir
+        }
+
+        function removeFromCart(id) {
+            carrito = carrito.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function changeQuantity(id, delta) {
+            const item = carrito.find(i => i.id === id);
+            if (!item) return;
+            item.cantidad += delta;
+            if (item.cantidad <= 0) {
+                removeFromCart(id);
+            } else {
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const cartContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+            const totalPrecio = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = `$${totalPrecio.toFixed(2)} MXN`;
+
+            if (carrito.length === 0) {
+                cartContainer.innerHTML = `<p class="text-center text-grisCalido text-sm py-12">Tu carrito está vacío. ¡Descubre nuestros productos capilares!</p>`;
+                return;
+            }
+
+            cartContainer.innerHTML = carrito.map(item => `
+                <div class="flex items-center space-x-4 bg-white p-3 rounded-xl border border-rosaSuave">
+                    <img src="${item.imagen}" alt="${item.nombre}" class="w-16 h-16 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h4 class="font-serif font-bold text-carbon text-base leading-tight">${item.nombre}</h4>
+                        <p class="text-xs text-rosaOscuro font-semibold mt-1">$${item.precio} MXN</p>
+                        <div class="flex items-center space-x-3 mt-2">
+                            <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 rounded-full bg-rosaSuave text-carbon text-xs flex items-center justify-center hover:bg-rosaPalo hover:text-white">-</button>
+                            <span class="text-xs font-medium">${item.cantidad}</span>
+                            <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 rounded-full bg-rosaSuave text-carbon text-xs flex items-center justify-center hover:bg-rosaPalo hover:text-white">+</button>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" class="text-grisCalido hover:text-red-500 text-sm p-1">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+       function checkoutPayPal() {
+  if (carrito.length === 0) {
+    alert("Por favor agrega al menos un producto a tu carrito antes de pagar.");
+    return;
+  }
+  const paypalUrl = "https://www.paypal.com/ncp/payment/82448LJPFQK9W";
+  window.location.href = paypalUrl;
+}
+		
+        /* ==========================================================================
+           RENDERIZADO DE PRODUCTOS Y FILTROS
+           ========================================================================== */
+        function createProductCard(prod) {
+            return `
+                <div class="bg-white rounded-2xl overflow-hidden border border-rosaSuave/60 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 overflow-hidden bg-rosaSuave/20">
+                            <img src="${prod.imagen}" alt="${prod.nombre}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            ${prod.promocion ? `<span class="absolute top-3 left-3 bg-rosaOscuro text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow">Oferta</span>` : ''}
+                            ${prod.destacado ? `<span class="absolute top-3 right-3 bg-dorado text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow">★ Destacado</span>` : ''}
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] uppercase tracking-widest text-rosaOscuro font-semibold">${prod.categoria}</span>
+                            <h3 class="font-serif text-xl font-bold text-carbon mt-1 mb-2">${prod.nombre}</h3>
+                            <p class="text-xs text-grisCalido leading-relaxed line-clamp-2">${prod.descripcion}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-rosaSuave/40">
+                        <div>
+                            ${prod.precioAnterior ? `<span class="text-xs text-grisCalido line-through block">$${prod.precioAnterior}</span>` : ''}
+                            <span class="font-serif text-xl font-bold text-carbon">$${prod.precio} <small class="text-[10px] font-sans font-normal">MXN</small></span>
+                        </div>
+                        <button onclick="addToCart(${prod.id})" class="px-4 py-2.5 bg-carbon text-crema text-xs uppercase tracking-wider rounded-full hover:bg-rosaOscuro transition flex items-center space-x-1.5">
+                            <i class="fas fa-plus text-[10px]"></i>
+                            <span>Agregar</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderInitialSections() {
+            // Destacados
+            const destacados = productos.filter(p => p.destacado);
+            document.getElementById('featured-grid').innerHTML = destacados.map(createProductCard).join('');
+
+            // Promociones
+            const promos = productos.filter(p => p.promocion);
+            document.getElementById('promo-grid').innerHTML = promos.map(createProductCard).join('');
+
+            // Catálogo Completo
+            renderCatalog(productos, "Mostrando todos los productos");
+        }
+
+        function renderCatalog(lista, textoEstado) {
+            document.getElementById('products-grid').innerHTML = lista.map(createProductCard).join('');
+            document.getElementById('filter-status').textContent = textoEstado;
+        }
+
+        function filterByCategory(cat) {
+            if (cat === 'todos') {
+                renderCatalog(productos, "Mostrando todos los productos");
+            } else {
+                const filtrados = productos.filter(p => p.categoria === cat);
+                renderCatalog(filtrados, `Categoría: ${cat.toUpperCase()}`);
+            }
+        }
+
+        function filterByHair(tipo) {
+            toggleSidebar(); // Cierra el menú izquierdo
+            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+            
+            if (tipo === 'todos') {
+                renderCatalog(productos, "Mostrando todos los productos");
+            } else {
+                const filtrados = productos.filter(p => p.tipoCabello.includes(tipo));
+                const nombres = {
+                    'rizado': 'Cabello Rizado y Afro',
+                    'liso': 'Cabello Liso',
+                    'ondulado': 'Cabello Ondulado',
+                    'danado': 'Cabello Dañado',
+                    'graso': 'Cuero Cabelludo Graso',
+					'proteccion termica': 'Cabello Dañado',
+					'Gel fijador': 'Cabello Ondulado',
+					'Aceites hidratantes': 'Cabello Dañado',
+					
+                };
+                renderCatalog(filtrados, `Recomendado para: ${nombres[tipo]}`);
+            }
+        }
+		function filtrarCategoriaRapida(categoria, btnActivo) {
+  if (typeof productos === 'undefined' || typeof renderCatalog !== 'function') {
+    return;
+  }
+
+  document.querySelectorAll('.cat-rapida').forEach(btn => {
+    btn.classList.remove('bg-carbon', 'text-crema');
+    btn.classList.add('bg-rosaPalo', 'text-white');
+  });
+
+  if (btnActivo) {
+    btnActivo.classList.remove('bg-rosaPalo', 'text-white');
+    btnActivo.classList.add('bg-carbon', 'text-crema');
+  }
+
+  const catLimpia = String(categoria).trim().toLowerCase();
+
+  if (catLimpia === 'todos') {
+    renderCatalog(productos, 'Mostrando todos los productos');
+  } else {
+    const filtrados = productos.filter(p =>
+      String(p.categoria || '').trim().toLowerCase() === catLimpia
+    );
+    renderCatalog(filtrados, `Categoría: ${catLimpia.toUpperCase()}`);
+  }
+
+  const catalogo = document.getElementById('catalogo');
+  if (catalogo) {
+    catalogo.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+        /* ==========================================================================
+           INTERFAZ (MENÚ LATERAL, CARRITO, CARRUSEL Y MODALES)
+           ========================================================================== */
+        function toggleSidebar() {
+            const sidebar = document.getElementById('left-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            if (forceOpen) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                drawer.classList.toggle('translate-x-full');
+                overlay.classList.toggle('hidden');
+            }
+        }
+
+        function openModal(key) {
+            const data = textosInfo[key];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = data.titulo;
+            document.getElementById('modal-content').innerHTML = data.contenido;
+            const modal = document.getElementById('info-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('info-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Lógica del Carrusel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Cambio automático del carrusel cada 6 segundos
+        setInterval(nextSlide, 6000);
+
+        // Inicializar la tienda al cargar
+        window.addEventListener('DOMContentLoaded', renderInitialSections);
+    </script>
+</body>
+</html>
